@@ -222,6 +222,7 @@ def xoshnaw():
       cetak(panel(f'''[bold green]HORE LICENSI ANDA SUDAH AKTIF [🥳]''','color(8)'))
       msg = str(os.geteuid())
       time.sleep(0.3)
+      login_lagi334()
       pass
     else:
       cetak(panel(f'''[bold red]LICENSI ANDA TIDAK AKTIF [😡]''','color(8)'))
@@ -243,14 +244,14 @@ def login():
 			sy3 = json.loads(sy.text)['id']
 			menu(sy2,sy3)
 		except KeyError:
-			login_lagi334()
+			xoshnaw()
 		except requests.exceptions.ConnectionError:
 			li = '# Problem Internet Connection, Check And Try Again'
 			lo = mark(li, style='red')
 			sol().print(lo, style='cyan')
 			exit()
 	except IOError:
-		login_lagi334()
+		xoshnaw()
 		
 def login_lagi334():
 	try:
