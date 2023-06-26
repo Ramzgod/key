@@ -166,7 +166,10 @@ except:
 	color_panel = "#00FF00"
 	color_ok = "#00FF00"
 	color_cp = "#FFFF00"
-
+def CetakBanner(ulfahsadiyah,asu):
+    Console(width=100).print(Panel(ulfahsadiyah,style='red'),justify='center')
+def whoami(kaya,kontol):
+    Console(width=100).print(Panel(kaya,style='red'),justify='center')
 #--------------------[ CONVERTER-BULAN ]--------------#
 dic = {'1':'January','2':'February','3':'March','4':'April','5':'May','6':'June','7':'July','8':'August','9':'September','10':'October','11':'November','12':'December'}
 dic2 = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'Devember'}
@@ -196,13 +199,13 @@ def clear():
     elif "win" in sys.platform.lower():os.system("cls")
 ###-----------------[]-----------------###
 def licensi():
-	cetak(panel(f"""[bold green]
+	CetakBanner(f"""[green]
    __ _                    _ 
   / /(_) ___ ___ _ __  ___(_)
  / / | |/ __/ _ \ '_ \/ __| |
 / /__| | (_|  __/ | | \__ \ |
 \____/_|\___\___|_| |_|___/_|
-""",'color(8)'))
+""",'color(8)')
 #------------------[ LOGO-LAKNAT ]-----------------#
 def banner():
 	cetak(panel(f"""{H2}  ______               __           _______      
@@ -214,25 +217,28 @@ def banner():
 def xoshnaw():
   uuid = str(os.geteuid()) + str(os.getlogin())
   id = "工".join(uuid)
-  licensi()
-  cetak(panel(f'''[bold cyan]LICENSI KAMU ADALAH [bold white]:[bold white] {id}''','color(8)'))
+  os.system('clear');licensi()
+  whoami(f'''[bold cyan]LICENSI KAMU ADALAH [bold white]:[bold white] {id}''','color(8)')
   try:
     httpCaht = requests.get("https://github.com/Ramzgod/key/blob/main/key.txt").text
     if id in httpCaht:
-      cetak(panel(f'''[bold green]HORE LICENSI ANDA SUDAH AKTIF [🥳]''','color(8)'))
+      whoami(f'''[bold green]HORE LICENSI ANDA SUDAH AKTIF [🥳]''','color(8)')
       msg = str(os.geteuid())
       time.sleep(0.3)
-      login_lagi334()
       pass
     else:
-      cetak(panel(f'''[bold red]LICENSI ANDA TIDAK AKTIF [😡]''','color(8)'))
-      cetak(panel(f'''[bold yellow]SILAHKAN COPY ID DI ATAS KIRIM KE AUTHOR [📩]''','color(8)'))
-      cetak(panel(f'''[bold green]Whatsapp[bold white] : [bold white] +6283866872105 [bold green][📲]''','color(8)'))
-      os.system('xdg-open https://wa.me/+6283866872105?text=BANG+SAYA+MAU+BELI+LICENSI+CRACK+FB+BERAPA+HARGA+NYA+?')
+      whoami(f'''[bold red]LICENSI ANDA TIDAK AKTIF [😡]''','color(8)')
+      whoami(f'''[bold yellow]SILAHKAN COPY ID DI ATAS KIRIM KE AUTHOR [📩]''','color(8)')
+      whoami(f'''[bold green]Whatsapp[bold white] : [bold white] +6283866872105 [bold green][📲]''','color(8)')
+      os.system('xdg-open https://wa.me/+6282176845491?text=BANG+SAYA+MAU+BELI+LICENSI+CRACK+FB+BERAPA+HARGA+NYA+?')
       time.sleep(1)
       sys.exit()
   except:
     sys.exit()
+    if name == '__main__':
+     print(logo)
+     xoshnaw()
+xoshnaw()
 def login():
 	try:
 		token = open('.token.txt','r').read()
@@ -1426,5 +1432,7 @@ if __name__=='__main__':
 	try:os.system('touch .prox.txt')
 	except:pass
 	try:os.system('clear')
+	except:pass
+	try:os.mkdir("data")
 	except:pass
 	login()
